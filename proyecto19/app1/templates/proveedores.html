@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<style>
+    body {
+        background-color: #333333;
+        color: #FFFFFF;
+        font-family: Arial, sans-serif;
+    }
+    h1 {
+        color: #FFFFFF;
+        text-align: center;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    li {
+        background-color: #444444;
+        padding: 10px;
+        margin-bottom: 5px;
+        width: 300px;
+        text-align: center;
+    }
+    .proveedor-info {
+        display: flex;
+        justify-content: space-between;
+    }
+</style>
+</head>
+<body>
+    <h1>Proveedores</h1>
+    <ul>
+        {% for proveedor in proveedores %}
+            <li>
+                <div class="proveedor-info">
+                    <span>{{ proveedor.nombre }}</span>
+                    <span>{{ proveedor.telefono }}</span>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+    <div style="position: absolute; top: 0; left: 0; padding: 10px;">
+    <div>
+        <a href="{% url 'agregar_proveedor' %}" style="color: white;">Agregar Proveedor</a>
+    </div>
+    <div>
+        <a href="{% url 'agregar_producto' %}" style="color: white;">Agregar Producto</a>
+    </div>
+    <div>
+        <a href="{% url 'home' %}"style="color: white;">Inicio</a>
+    </div>    
+</body>
+</html>

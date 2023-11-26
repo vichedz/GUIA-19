@@ -4,13 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        a {
+            color: #fff;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            background-color: #666;
+        }
+    </style>
 </head>
 <body>
     {% if es_estudiante or es_admin %}
     <h1>Bienvenido {{ user.username }} al área de Estudiantes</h1>
-{% else %}
+    {% else %}
     <h1>No tienes permisos para acceder a esta página</h1>
-{% endif %}
-<a href="{% url 'logout' %}">Cerrar sesión</a>
+    {% endif %}
+    <ul>
+        <li><a href="{% url 'admin:index' %}">Administración</a></li>
+        <li><a href="{% url 'registro' %}">Registro</a></li>
+        <li><a href="{% url 'proveedores' %}">Proveedores</a></li>
+        <li><a href="{% url 'productos' %}">Productos</a></li>
+        <!-- Otros enlaces a páginas adicionales -->
+    </ul>
+    <a href="{% url 'logout' %}">Cerrar sesión</a>
 </body>
 </html>
