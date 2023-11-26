@@ -1,2 +1,5 @@
 # GUIA-19
-victor salvador hernandez aparicio
+integrantes 
+Victor Salvador Hernandez Aparicio
+Rebeca Marisol Argueta Cruz
+Monica Alessandra Bonilla Escobar
